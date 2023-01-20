@@ -68,4 +68,4 @@ docker rm tmp_container &> /dev/null
 
 
 echo "------------------ Build successfully finished! --------------------------------"
-echo "------------------ Start the container: bash docker_start.sh -------------------"
+echo "------------------ Start the container: bash docker_start_interactive.sh -------------------"
