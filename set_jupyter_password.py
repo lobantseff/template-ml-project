@@ -7,3 +7,6 @@ with open(f"{sys.argv[1]}/.jupyter/.jupyter_password") as f:
 
 with open(f'{sys.argv[1]}/.jupyter/jupyter_notebook_config.json', 'w') as f:
     f.write('{"NotebookApp": {"password": "%s"}}' % (passwd(password)))
+
+with open(f'{sys.argv[1]}/.jupyter/jupyter_server_config.py', 'w') as f:
+    f.write('c.ServerApp.ip = \'0.0.0.0\'\n')

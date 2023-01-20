@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:22.03-py3
+FROM nvcr.io/nvidia/pytorch:22.11-py3
 ENV PYTHONUNBUFFERED 1
 ENV PATH="${PATH}:/opt/hpcx/ompi/bin"
 ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/hpcx/ompi/lib"
@@ -24,6 +24,7 @@ RUN apt-get update \
     vim \
     screen \
     tmux \
+    htop \
     python3-opencv \
     openssh-server \
     && mkdir /var/run/sshd \
@@ -34,9 +35,8 @@ RUN apt-get update \
 
 # ----------------------------- Install dependencies ------------------------------
 COPY requirements.txt /root/requirements.txt
-RUN sed -i '/^$/d' /root/requirements.txt \
-    && xargs -L 1 pip install --no-cache-dir < /root/requirements.txt
- 
+RUN sed '/^#/d' /root/requirements.txt | xargs -L 1 pip install --no-cache-dir
+
 
 # ------------------- Configure Jupyter and Tensorboard individually --------------------
 COPY .jupyter_password set_jupyter_password.py /root/.jupyter/

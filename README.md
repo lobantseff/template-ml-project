@@ -3,7 +3,7 @@ This template was prepared to facilitate the routine of Docker image preparation
 
 If you need to share the container you can share this folder evolved and Docker tarred image (`docker save my-image:latest > my-image.tar`), then your counterpart can easily run it with `bash docker_start.(sh | ps1)` and, voila!, they get the same enviroment as you!
 
-This version of the template is based on [NVIDIA PyTorch Release 22.03](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel_22-03.html)
+This version of the template is based on [NVIDIA PyTorch Release 22.11](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-22-11.html)
 
 
 ## Requirements:
