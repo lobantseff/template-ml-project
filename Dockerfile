@@ -43,8 +43,8 @@ RUN pip install jupyterlab ipywidgets tensorboard \
     && python /root/.jupyter/set_jupyter_password.py /root
 
 RUN echo "#!/bin/sh" > ~/init.sh \
-    && echo "/opt/conda/bin/jupyter lab --allow-root --no-browser &" >> ~/init.sh \
-    && echo "/opt/conda/bin/tensorboard --logdir=\$TB_DIR --bind_all" >> ~/init.sh \
+    && echo "/usr/local/bin/jupyter lab --allow-root --no-browser &" >> ~/init.sh \
+    && echo "/usr/local/bin/tensorboard --logdir=\$TB_DIR --bind_all" >> ~/init.sh \
     && chmod +x ~/init.sh
 
 
