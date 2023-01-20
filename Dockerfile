@@ -8,8 +8,7 @@ ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/opt/hpcx/ompi/lib"
 ARG userpwd=passwd
 RUN sh -c "echo root:$userpwd | chpasswd" \
     && mkdir -p /root/.ssh \
-    && mkdir -p /root/.jupyter \
-    && /opt/conda/bin/conda init
+    && mkdir -p /root/.jupyter
 
 
 # -------------------------- Install essential Linux packages ---------------------------
